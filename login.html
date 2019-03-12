@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Central Park Wifi | Login</title>
+
+	<!-- Meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="theme-color" content="#ffa500" />
+	<link rel="icon" type="image/png" href="images/favicon.png" />
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+
+	<!-- Font Awesome CSS -->
+	<link rel="stylesheet" href="assets/css/fontawesome/all.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/login.css">
+</head>
+
+<body>
+	<!-- Mikrotik Required -->
+	$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="https://www.facebook.com/centralparksingburi/" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+		function doLogin() {
+			document.sendin.username.value = document.login.username.value;
+			document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+			document.sendin.submit();
+			return false;
+		}
+	</script>
+	$(endif)
+	<!-- Mikrotik Required End -->
+
+	<!-- Code Edit Start Here!! -->
+	<div class="fullscreen">
+		<div class="background">
+			<div class="container">
+				<div class="row justify-content-md-center">
+					<div class="col col-lg-6 col-md-8">
+						<!-- Header -->
+
+						<!-- Logo -->
+						<div class="logo">
+							<img src="assets/images/logo.svg" alt="Central Park">
+						</div>
+						<!-- Logo End-->
+
+						<!-- Description -->
+						<div class="description">
+							ระบุเลขห้องพักเพื่อเข้าใช้งานอินเตอร์เน็ต</br>Enter Room Number for Internet Access
+						</div>
+						<!-- Description End -->
+
+						<!-- Header End-->
+
+						<!-- Login Form -->
+						<form name="login" class="login" autocomplete="off" action="$(link-login-only)" method="post" $(if chap-id)
+						 onSubmit="return doLogin()" $(endif)>
+							<input type="hidden" name="dst" value="$(link-orig)" />
+							<input type="hidden" name="popup" value="true" />
+							<!-- Field -->
+							<div class="loginwrap">
+								<input class="loginfield" type="number" name="username" placeholder="เลขห้องพัก / Room Number" value="$(username)"
+								 inputmode="numeric" pattern="[0-9]{3}" required>
+								<span class="focus-loginfield"></span>
+								<span class="symbol-loginfield">
+									<i class="fas fa-hotel"></i>
+								</span>
+							</div>
+							<!-- Field End-->
+
+							<!-- Error Messages -->
+							<div class="errormessage">
+								$(if error)
+								<div class="error">$(error)</div>
+								$(endif)
+							</div>
+							<!-- Error Messages End -->
+
+							<!-- Login Button -->
+							<div class="buttonwrap">
+								<button class="submit">
+									Login
+								</button>
+							</div>
+							<!-- Login Button End -->
+
+						</form>
+						<!-- Login Form End -->
+
+						<!-- Contact us -->
+						<div class="contactus">
+							แจ้งปัญหา โทร. <a href="tel:+6636523444">036-523-444</a>, <a href="tel:+66866034444">086-603-4444</a>
+							</br>Report Problems Tel. <a href="tel:+6636523444">036-523-444</a>, <a href="tel:+66866034444">086-603-4444</a>
+						</div>
+						<!-- Contact us End -->
+
+						<!-- Copyright -->
+						<div class="copyright">
+							©Copyright 2019 Central Park
+						</div>
+						<!-- Copyright End -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- JS -->
+	<!-- Bootstrap JS -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap/bootstrap.min.js"></script>
+	<!-- Mikrotik JS Script -->
+	<script type="text/javascript">
+		document.login.username.focus();
+	</script>
+	<!-- Code Edit End Here!! -->
+</body>
+
+</html>

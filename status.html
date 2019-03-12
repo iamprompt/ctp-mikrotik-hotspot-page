@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Central Park Wifi | Status</title>
+
+	$(if refresh-timeout)
+	<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+	$(endif)
+
+	<!-- Meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="theme-color" content="#ffa500" />
+	<link rel="icon" type="image/png" href="images/favicon.png" />
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+
+	<!-- Font Awesome CSS -->
+	<link rel="stylesheet" href="assets/css/fontawesome/all.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+	<!-- Code Edit Start Here!! -->
+	<div class="fullscreen">
+		<div class="background">
+			<div class="container">
+				<div class="row justify-content-md-center">
+					<div class="col col-lg-6 col-md-8">
+						<!-- Header -->
+
+						<!-- Logo -->
+						<div class="logo">
+							<img src="assets/images/logo.svg" alt="Central Park">
+						</div>
+						<!-- Logo End-->
+
+						<!-- Welcome Message -->
+						<div class="welcomemessage" style="padding: 30px 0 0 0;">
+							คุณพักอยู่ที่ห้อง $(username)
+						</div>
+						<div class="welcomemessage" style="padding-top: 10px;">
+							Your Room is $(username).
+						</div>
+						<!-- Welcome Message End-->
+
+						<!-- Description -->
+						<div class="description" style="padding: 0 0 0px;">
+							คลิก <a href="$(link-logout)">ที่นี่</a> เพื่อออกจากระบบ
+						</div>
+						<div class="description">
+							Click <a href="$(link-logout)">Here</a> to Logout.
+						</div>
+						<!-- Description End -->
+
+						<!-- Header End-->
+
+						<!-- Contact us -->
+						<div class="contactus">
+							แจ้งปัญหา โทร. <a href="tel:+6636523444">036-523-444</a>, <a href="tel:+66866034444">086-603-4444</a>
+							</br>Report Problems Tel. <a href="tel:+6636523444">036-523-444</a>, <a href="tel:+66866034444">086-603-4444</a>
+						</div>
+						<!-- Contact us End -->
+
+						<!-- Copyright -->
+						<div class="copyright">
+							©Copyright 2019 Central Park
+						</div>
+						<!-- Copyright End -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap JS -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap/bootstrap.min.js"></script>
+	<!-- Code Edit End Here!! -->
+</body>
+
+</html>
